@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Product Details</title>
+    <script>
+        var products = new Array("Iphone 11 - $799", "Macboook pro 13 - $1,499", "Apple TV $149", "Apple Watch - $349");
+        var images = new Array("images/macbookpro13.jpeg", "images/iphone11.jpg", "images/appletv.jpeg", "images/applewatch.jpeg");
+        window.onload = function addProductsPage(){
+            var cart = document.getElementById("cart");
+            var products = document.getElementById("products");
+            for(i=0;i<images.length;i++){
+                var productImg = document.createElement("img");
+                productImg.setAttribute("src", images[i]);
+                productImg.setAttribute("width","200")
+                products.appendChild(productImg);
+            }
+        }
+        function removeProductCart(){
+
+        }
+        function addProductCart(){
+
+        }
+    </script>
+</head>
+<body>
+    <div id="products">
+        
+    </div>
+    <div id="cart">
+        <p>Cart</p>
+    </div>
+</body>
+</html>
