@@ -2,23 +2,39 @@
 <head>
     <title>Product Details</title>
     <script>
-        var products = new Array("Iphone 11 - $799", "Macboook pro 13 - $1,499", "Apple TV $149", "Apple Watch - $349");
-        var images = new Array("images/macbookpro13.jpeg", "images/iphone11.jpg", "images/appletv.jpeg", "images/applewatch.jpeg");
+        var images = new Array("images/macbookpro13.jpeg", "Macboook pro 13 - $1,499","images/iphone11.jpg", "Iphone 11 - $799","images/appletv.jpeg","Apple TV $149", "images/applewatch.jpeg","Apple Watch - $349");
         window.onload = function addProductsPage(){
-            var cart = document.getElementById("cart");
             var products = document.getElementById("products");
             for(i=0;i<images.length;i++){
-                var productImg = document.createElement("img");
-                productImg.setAttribute("src", images[i]);
-                productImg.setAttribute("width","200")
-                products.appendChild(productImg);
+                if(i%2==0){
+                    var productBox = document.createElement("div");
+                    productBox.setAttribute("style","float:left");
+                    var productImg = document.createElement("img");
+                    productImg.setAttribute("src", images[i]);
+                    productImg.setAttribute("hspace","5")
+                    productImg.setAttribute("width","200");
+                    productImg.setAttribute("height","225");
+                    productImg.setAttribute("onclick","addProductCart(this)");
+                    productBox.appendChild(productImg);
+                    products.appendChild(productBox);
+                }else{
+                    var name = document.createElement("p");
+                    var text = document.createTextNode(images[i]);
+                    name.appendChild(text);
+                    productBox.appendChild(name);                        
+                    }
+
+
+       
+
             }
         }
         function removeProductCart(){
-
+            
         }
         function addProductCart(){
-
+            var cart = document.getElementById("cart");
+            cart.appendChild()
         }
     </script>
 </head>
